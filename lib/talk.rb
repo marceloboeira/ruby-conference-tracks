@@ -2,7 +2,7 @@ class Talk
   attr_accessor :title, :length
 
   def initialize(options = {})
-    name = options[:name] || "No name"
+    title = options[:title] || "No name"
     length = options[:length] || "10min"
   end
 
