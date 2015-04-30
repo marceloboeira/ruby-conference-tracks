@@ -3,10 +3,10 @@ require 'rubygems'
 require 'active_support/time'
 
 class Conference
-  attr_accessor :from, :to, :launch
+  attr_accessor :from, :to, :launch, :input
 
   def initialize(options = {})
-    options.each { |option, value| instance_variable_set("@#{option}", value)
+    options.each { |option, value| instance_variable_set("@#{option}", value) }
 
     self.from ||= "09:00 AM"
     self.to ||= "05:00 PM"
@@ -38,7 +38,6 @@ class Conference
     ] 
     t = Time.parse("09 AM")
     track(180).each do |talk|
-      
       p "#{t.strftime('%l:%M %p')} - #{talk[:name]}"
       t += (talk[:length] * 60)
     end
@@ -69,9 +68,4 @@ class Conference
     end
     result_talks
   end
-
-  def to_s
-
-  end
-
 end
