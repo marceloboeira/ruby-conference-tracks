@@ -10,7 +10,6 @@ conference = Conference.new(starts_at: "09:00 AM",
                             after_event_at: "4:30 PM", 
                             input: input)
 conference.start
-
 puts "Track 1"
 puts conference.to_s
 puts "------------------------"

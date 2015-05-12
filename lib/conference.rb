@@ -1,7 +1,7 @@
-require 'time'
-require 'active_support/time'
-require_relative 'talk'
-require_relative 'track'
+require "time"
+require "active_support/time"
+require_relative "talk"
+require_relative "track"
 
 class Conference
   
