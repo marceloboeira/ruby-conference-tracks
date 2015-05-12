@@ -1,5 +1,5 @@
 class Track 
-  attr_reader :starts_at, :finishs_at, :launch_at, :after_event_at, :talks, :tracks
+  attr_reader :starts_at, :finishs_at, :lunch_at, :after_event_at, :talks, :tracks
   
   def initialize(options)
     options.each { |option, value| instance_variable_set("@#{option}", value) }
@@ -11,9 +11,9 @@ class Track
   def start
     @talks.shuffle!
     
-    @tracks |= process(@starts_at, @launch_at)
-    @tracks << Talk.new(title: "Launch", starts_at: @launch_at)
-    @tracks |= process(@launch_at + 1.hour, @finishs_at)
+    @tracks |= process(@starts_at, @lunch_at)
+    @tracks << Talk.new(title: "Lunch", starts_at: @lunch_at)
+    @tracks |= process(@lunch_at + 1.hour, @finishs_at)
     @tracks << Talk.new(title: "Networking Event", starts_at: @after_event_at)
     
     @tracks
@@ -30,7 +30,7 @@ class Track
   def normalize
     @starts_at = Time.parse(@starts_at)
     @finishs_at = Time.parse(@finishs_at)
-    @launch_at = Time.parse(@launch_at)
+    @lunch_at = Time.parse(@lunch_at)
     @after_event_at = Time.parse(@after_event_at)
   end
 

@@ -17,7 +17,7 @@ class Conference
   def start
     @track = Track.new(starts_at: @starts_at, 
                        finishs_at: @finishs_at,
-                       launch_at: @launch_at,
+                       lunch_at: @lunch_at,
                        after_event_at: @after_event_at,
                        talks: @talks.clone)
     @track.start

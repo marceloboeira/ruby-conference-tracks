@@ -5,9 +5,9 @@ describe Conference do
   let (:file) { File.read("spec/factories/fake_conference.txt")}
 
   it "works properly" do
-    conference = Conference.new(starts_at:  "09:00 AM", 
+    conference = Conference.new(starts_at: "09:00 AM", 
                                 finishs_at: "05:00 PM", 
-                                launch_at:  "11:30 AM", 
+                                lunch_at: "11:30 AM", 
                                 after_event_at: "05:00 PM", 
                                 input: file)
     conference.start
@@ -17,7 +17,7 @@ describe Conference do
     
     expect(track_a).to_not eq(track_b)
     [track_a, track_b].each do |track|
-      expect(track).to include("Launch")
+      expect(track).to include("Lunch")
       expect(track).to include("Networking Event")
     end
   end

@@ -6,7 +6,7 @@ input = File.read("input.txt")
 
 conference = Conference.new(starts_at: "09:00 AM", 
                             finishs_at: "4:00 PM", 
-                            launch_at: "12:00 PM", 
+                            lunch_at: "12:00 PM", 
                             after_event_at: "4:30 PM", 
                             input: input)
 conference.start
