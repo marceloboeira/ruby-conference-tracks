@@ -38,8 +38,7 @@ class Track
     result_talks, current_length = [], 0
     length = to - from
     @talks.each do |talk|
-
-      if current_length <= length && current_length + talk.length <= length
+      if current_length < length && current_length + talk.length <= length
         talk.starts_at = from + current_length
         result_talks << @talks.delete(talk)
         current_length += talk.length
